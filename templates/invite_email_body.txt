@@ -1,0 +1,13 @@
+{% if invitation.first_name and invitation.last_name %}
+Hello {{ invitation.first_name }} {{ invitation.last_name }}!
+{% else %}
+Hello!
+{% endif %}
+
+You have been invited to {{ site.name }}.
+
+You can join the site by clicking on the following link:
+ {{ link }}
+
+See you soon,
+ {{ site.name }}-Team

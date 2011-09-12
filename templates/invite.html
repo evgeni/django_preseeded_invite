@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if recipients %}
+<div class="info">
+Sent invitations to {{ recipients }}.
+</div>
+{% endif %}
+
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+<table class="inputtable">
+{{ form.as_table }}
+</table>
+<div class="right">
+    <input type="submit" value="Submit" />
+</div>
+</form>
+
+{% endblock %}

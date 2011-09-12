@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if name %}
+<h1>Willkommen {{ name }}!</h2>
+{% else %}
+<h1>Willkommen {{ email }}!</h2>
+{% endif %}
+
+<form action="" method="post">{% csrf_token %}
+<table class="inputtable">
+<tr><th>Username:</th><td style="color: inherit; font-size: inherit;">{{ email }}</td></tr>
+{{ form.as_table }}
+</table>
+<div class="right">
+    <input type="submit" value="Join!" />
+</div>
+</form>
+
+{% endblock %}
